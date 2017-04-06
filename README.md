@@ -5,7 +5,7 @@
 pip install django-watermarks
 ```
 
-Add currencies to INSTALLED_APPS of settings.py:
+Add watermarks to INSTALLED_APPS of settings.py:
 
 ```
 INSTALLED_APPS = [
