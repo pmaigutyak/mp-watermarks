@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
     requires = f.read().splitlines()
 
 
-url = 'https://github.com/pmaigutyak/mp-shop'
+url = 'https://github.com/pmaigutyak/mp-watermarks'
 
 
 setup(
