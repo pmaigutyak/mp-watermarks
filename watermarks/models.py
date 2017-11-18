@@ -79,9 +79,9 @@ class Watermark(models.Model):
             wm = ResizeToFit(src_img.size[0], src_img.size[1], True).process(wm)
             wm_size = wm.size
 
-        # prepare image for overlaying (ensure alpha channel)
-        if src_img.mode != 'RGBA':
-            src_img = src_img.convert('RGBA')
+        # # prepare image for overlaying (ensure alpha channel)
+        # if src_img.mode != 'RGBA':
+        #     src_img = src_img.convert('RGBA')
 
         # create a layer to place the watermark
         layer = Image.new('RGBA', src_img.size, (0, 0, 0, 0))
