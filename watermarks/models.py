@@ -163,7 +163,7 @@ class WatermarkText(Watermark):
         return ImageColor.getrgb(self.font_color)
 
     def _get_watermark(self):
-        watermark = Image.new("RGBA", self.font_size, (0, 0, 0, 0))
+        watermark = Image.new("RGBA", (150, 150), (0, 0, 0, 0))
         draw = ImageDraw.Draw(watermark, "RGBA")
         draw.text((0, 0), self.text, font=self._font, fill=self._text_color)
         return watermark
