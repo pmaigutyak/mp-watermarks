@@ -11,14 +11,13 @@ from django.utils.translation import ugettext_lazy as _
 
 class Watermark(models.Model):
 
-    name = models.CharField(
-        _('Name'), max_length=255, blank=False, null=False, unique=True)
+    name = models.CharField(_('Name'), max_length=255, unique=True)
 
     position_x = models.CharField(
-        _('Position X'), blank=False, max_length=255, default='center')
+        _('Position X'), max_length=255, default='center')
 
     position_y = models.CharField(
-        _('Position Y'), blank=False, max_length=255, default='center')
+        _('Position Y'), max_length=255, default='center')
 
     opacity = models.FloatField(_('Opacity'), default=1)
 
@@ -40,7 +39,7 @@ class Watermark(models.Model):
 
         sh, sv = self.position_x, self.position_y
 
-        if isinstance(sh, basestring) and '%' in sh:
+        if isinstance(sh, str) and '%' in sh:
             sh = int(img_size[0] * float(sh.rstrip("%")) / 100)
 
         if isinstance(sh, int) and sh < 0:
@@ -53,7 +52,7 @@ class Watermark(models.Model):
         elif sh == 'right':
             sh = img_size[0] - wm_size[0]
 
-        if isinstance(sv, basestring) and '%' in sv:
+        if isinstance(sv, str) and '%' in sv:
             sv = int(img_size[1] * float(sv.rstrip("%")) / 100)
 
         if isinstance(sv, int) and sv < 0:
@@ -66,7 +65,7 @@ class Watermark(models.Model):
         elif sv == 'bottom':
             sv = img_size[1] - wm_size[1]
 
-        return sh, sv
+        return int(sh), int(sv)
 
     def process(self, img_path):
 
@@ -112,7 +111,7 @@ class Watermark(models.Model):
     def get(cls, name):
         return cls.objects.get(name=name)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
