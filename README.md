@@ -1,20 +1,3 @@
-## Django-Watermarks
-
-**Installation**
-```
-pip install django-watermarks
-```
-
-Add watermarks to INSTALLED_APPS of settings.py:
-
-```
-INSTALLED_APPS = [
-    ...,
-    'imagekit',
-    'watermarks'
-]
-```
-
 **Image processing**
 
 ```

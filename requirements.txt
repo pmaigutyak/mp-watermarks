@@ -1,2 +1,2 @@
-Pillow
-django-imagekit
+Pillow==8.2.0
+django-imagekit==4.0.2
