@@ -1,12 +1,9 @@
 
-from django.apps import AppConfig
-from django.utils.translation import ugettext_lazy as _
+def setup_settings(settings, is_prod, **kwargs):
 
-
-class WatermarksAppConfig(AppConfig):
-
-    name = 'watermarks'
-    verbose_name = _('Watermarks')
-
-
-default_app_config = 'watermarks.WatermarksAppConfig'
+    settings['INSTALLED_APPS'] += [
+        app for app in [
+            'watermarks',
+            'imagekit'
+        ] if app not in settings['INSTALLED_APPS']
+    ]
