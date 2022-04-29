@@ -48,7 +48,7 @@ def insert_watermark(key, img_path):
     try:
         params = WATERMARKS[key]
     except KeyError:
-        pass
+        return
 
     src_img = Image.open(img_path)
 
