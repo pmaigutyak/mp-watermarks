@@ -7,7 +7,7 @@ with open('requirements.txt') as f:
 
 
 url = 'https://github.com/pmaigutyak/mp-watermarks'
-version = '2.0.2'
+version = '2.0.3'
 
 setup(
     name='django-watermarks',
