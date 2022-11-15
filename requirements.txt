@@ -1,2 +1,2 @@
-Pillow==9.2.0
+Pillow==9.3.0
 django-imagekit==4.1.0
