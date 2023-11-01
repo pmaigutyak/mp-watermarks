@@ -1,6 +1,6 @@
 ### Watermarks
 
-* add `django-mp-watermarks` to `requirements.txt`
+* add `django-watermarks` to `requirements.txt`
 * add `watermarks` to `INSTALLED_APPS`
 * add images using example:
 ```
