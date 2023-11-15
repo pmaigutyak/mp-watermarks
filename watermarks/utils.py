@@ -2,7 +2,7 @@
 import os
 
 from imagekit.processors import ResizeToFit
-from imagekit.lib import Image, ImageEnhance
+from PIL import Image, ImageEnhance
 
 from django.conf import settings
 
